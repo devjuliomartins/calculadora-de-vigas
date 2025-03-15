@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Vigas</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h2>Calculadora de Vigas</h2>
+        </header>
+        
+        <div class="input-section">
+            <label for="comprimento">Comprimento da Viga (m):</label>
+            <input type="number" id="comprimento" value="10" step="0.1">
+        </div>
+
+        <form id="form-apoios" class="input-section">
+            <h3>Apoios</h3>
+            <label for="tipo-apoio">Escolha o tipo de apoio:</label>
+            <div id="apoios">
+                <button type="button" onclick="selecionarApoio('simples')">Simples</button>
+                <button type="button" onclick="selecionarApoio('engastado')">Engastado</button>
+                <button type="button" onclick="selecionarApoio('pivô')">Pivô</button>
+            </div>
+            <input type="text" id="tipo-apoio" readonly placeholder="Selecione o tipo de apoio">
+            
+            <label for="posicao-apoio">Posição do apoio (m):</label>
+            <input type="number" id="posicao-apoio" value="0" step="0.1">
+        </form>
+
+        <form id="form-cargas" class="input-section">
+            <h3>Cargas</h3>
+            <label for="tipo-carga">Escolha o tipo de carga:</label>
+            <div id="cargas">
+                <button type="button" onclick="selecionarCarga('pontual')">Pontual</button>
+                <button type="button" onclick="selecionarCarga('distribuída')">Distribuída</button>
+            </div>
+            <input type="text" id="tipo-carga" readonly placeholder="Selecione o tipo de carga">
+            
+            <label for="intensidade-carga">Intensidade da carga (kN):</label>
+            <input type="number" id="intensidade-carga" value="10" step="0.1">
+            
+            <label for="posicao-carga">Posição da carga (m):</label>
+            <input type="number" id="posicao-carga" value="5" step="0.1">
+        </form>
+
+        <button onclick="calcular()">Calcular</button>
+
+        <div class="resultado">
+            <h3>Reações de Apoio:</h3>
+            <pre id="resultado"></pre>
+        </div>        
+    </div>
+
+    <script src="/static/scripts.js"></script>
+</body>
+</html>
