@@ -6,29 +6,26 @@ from flask import Flask, render_template, request, jsonify, send_from_directory
 app = Flask(__name__)
 
 def calcular_reacoes(comprimento, tipo_apoio, posicao_apoio, tipo_carga, intensidade_carga, posicao_carga):
-    reacaoR1 = 0
-    momentoM1 = 0
+    reacao_R1 = 0
+    momento_M1 = 0
 
     if tipo_carga == "pontual":
         if tipo_apoio == "simples":
-            reacaoR1 = intensidade_carga * (comprimento - posicao_carga) / comprimento
+            reacao_R1 = intensidade_carga * (comprimento - posicao_carga) / comprimento
         elif tipo_apoio == "engastado":
-            reacaoR1 = intensidade_carga * (comprimento - posicao_carga) / comprimento
-            momentoM1 = intensidade_carga * (comprimento - posicao_carga) * (comprimento - posicao_apoio) / comprimento
+            reacao_R1 = intensidade_carga * (comprimento - posicao_carga) / comprimento
+            momento_M1 = intensidade_carga * (comprimento - posicao_carga) * (comprimento - posicao_apoio) / comprimento
         elif tipo_apoio == "pivô":
-            reacaoR1 = intensidade_carga / 2
+            reacao_R1 = intensidade_carga / 2
+    
     elif tipo_carga == "distribuída":
         carga_total = intensidade_carga * comprimento
-        reacaoR1 = carga_total / 2
+        reacao_R1 = carga_total / 2
 
     return {
         "reacoes": {
-            "R1": reacaoR1,
-            "M1": momentoM1 if momentoM1 != 0 else None
-        },
-        "diagramas": {
-            "forca_cortante": "/static/graphics/forca_cortante.png",
-            "momento_fletor": "/static/graphics/momento_fletor.png"
+            "R1": reacao_R1,
+            "M1": momento_M1 if momento_M1 != 0 else None
         }
     }
 
