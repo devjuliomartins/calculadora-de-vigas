@@ -1,9 +1,17 @@
 function selecionarApoio(tipo) {
     document.getElementById("tipo-apoio").value = tipo;
+
+    const botoesApoio = document.querySelectorAll('#apoios button');
+    botoesApoio.forEach(button => button.classList.remove('selecionado'));
+    document.querySelector(`#apoios button[onclick="selecionarApoio('${tipo}')"]`).classList.add('selecionado');
 }
 
 function selecionarCarga(tipo) {
     document.getElementById("tipo-carga").value = tipo;
+
+    const botoesCarga = document.querySelectorAll('#cargas button');
+    botoesCarga.forEach(button => button.classList.remove('selecionado'));
+    document.querySelector(`#cargas button[onclick="selecionarCarga('${tipo}')"]`).classList.add('selecionado');
 }
 
 function calcular() {

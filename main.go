@@ -3,6 +3,7 @@ package main
 import (
 	"calculadora-de-vigas/handler"
 	"github.com/gin-gonic/gin"
+	"net/http"
 )
 
 func main() {
@@ -12,7 +13,7 @@ func main() {
 
 	r.LoadHTMLGlob("templates/*")
 	r.GET("/", func(c *gin.Context) {
-		c.HTML(200, "index.html", nil)
+		c.HTML(http.StatusOK, "index.html", nil)
 	})
 
 	r.POST("/viga/calcular", handler.CalcularViga)
