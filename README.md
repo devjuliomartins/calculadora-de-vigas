@@ -9,8 +9,9 @@ Este é um projeto desenvolvido para a disciplina de **Resistência dos Materiai
 
 ## Tecnologias Utilizadas
 
-- **Python**: Linguagem de programação utilizada para o cálculo das reações e geração dos diagramas.
-- **Flask**: Framework utilizado para a criação de uma interface web simples.
+- **Golang**: Linguagem de programação utilizada para o cálculo das reações.
+- **Gin**: Framework utilizado para a criação de uma interface web simples e eficiente.
+- **JavaScript**: Usado para interagir com a API e exibir os resultados no frontend.
 
 ## Uso
 
@@ -27,11 +28,10 @@ Após inserir todos os dados, clique em **Calcular** para obter as reações de 
 
 - Reações de apoio calculadas.
 
+
 ## Para Rodar o Projeto
 
-### Requisitos
-
-Antes de rodar o projeto, é necessário ter o Python instalado. Recomendamos o Python 3.7 ou superior. Você também precisará instalar as dependências listadas abaixo.
+Antes de rodar o projeto, é necessário ter o Go instalado na máquina.
 
 ### Passos para Executar
 
@@ -44,59 +44,27 @@ Antes de rodar o projeto, é necessário ter o Python instalado. Recomendamos o 
     cd calculadora-de-vigas
     ```
 
-2. **Crie um Ambiente Virtual** (opcional, mas recomendado):
-
-    Para manter o ambiente de desenvolvimento isolado, você pode criar um ambiente virtual:
-
-    ```bash
-    python -m venv venv
-    ```
-
-3. **Ative o Ambiente Virtual**:
-
-   **No Windows**:
-      ```bash
-      venv\Scripts\activate
-      ```
-   **No macOS/Linux**:
-      ```bash
-      source venv/bin/activate
-      ```
-
-4. **Instale as Dependências**:
+2. **Instale as Dependências**:
 
     Instale as bibliotecas necessárias para rodar o projeto:
 
     ```bash
-    pip install -r requirements.txt
+    go mod tidy
     ```
 
-5. **Execute o Servidor Flask**:
+5. **Executar a Aplicação**:
 
-    Após a instalação das dependências, você pode rodar o servidor Flask:
+    Para rodar o servidor:
 
     ```bash
-    python main.py
+    go run main.go
     ```
 
-    O servidor estará disponível em `http://localhost:5000/`.
+    O servidor estará disponível em `http://localhost:8080/`.
 
 6. **Acesse o Projeto**:
 
-    Abra o navegador e acesse `http://localhost:5000/` para interagir com a calculadora.
-
-### Dependências
-
-O projeto utiliza as seguintes bibliotecas:
-
-- Flask
-- NumPy
-
-Para instalar as dependências, execute:
-
-```bash
-pip install -r requirements.txt
-```
+    Abra o navegador e acesse `http://localhost:8080/` para interagir com a calculadora.
 
 ## Contribuições
 
