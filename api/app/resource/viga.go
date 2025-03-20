@@ -1,7 +1,7 @@
 package resource
 
 import (
-	"calculadora-de-vigas/app/model"
+	"calculadora-de-vigas/api/app/model"
 )
 
 func CalcularReacoes(req model.VigaRequest) model.VigaResponse {
