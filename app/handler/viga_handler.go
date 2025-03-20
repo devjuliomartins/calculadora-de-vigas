@@ -1,8 +1,8 @@
 package handler
 
 import (
-	"calculadora-de-vigas/model"
-	"calculadora-de-vigas/resource"
+	"calculadora-de-vigas/app/model"
+	"calculadora-de-vigas/app/resource"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )

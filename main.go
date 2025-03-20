@@ -1,7 +1,7 @@
 package main
 
 import (
-	"calculadora-de-vigas/handler"
+	"calculadora-de-vigas/app/handler"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -9,9 +9,9 @@ import (
 func main() {
 	r := gin.Default()
 
-	r.Static("/static", "./static")
+	r.Static("/static", "./web/static")
 
-	r.LoadHTMLGlob("templates/*")
+	r.LoadHTMLGlob("web/templates/*")
 	r.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.html", nil)
 	})
