@@ -1,6 +1,8 @@
 package resource
 
-import "calculadora-de-vigas/model"
+import (
+	"calculadora-de-vigas/api/app/model"
+)
 
 func CalcularReacoes(req model.VigaRequest) model.VigaResponse {
 	var reacao float64
